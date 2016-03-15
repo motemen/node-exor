@@ -1,0 +1,22 @@
+{
+  "name": "@motemen/exor",
+  "version": "0.0.0",
+  "description": "Execute a command and kill all its children together when it is to be killed",
+  "scripts": {
+    "postinstall": "node install.js"
+  },
+  "bin": {
+    "exor": "./bin/exor.js"
+  },
+  "keywords": [],
+  "author": "motemen (https://motemen.github.io/)",
+  "license": "ISC",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "progress-stream": "^1.2.0",
+    "request": "^2.69.0",
+    "single-line-log": "^1.1.1",
+    "unzip": "^0.1.11"
+  },
+  "repository": "motemen/node-exor"
+}
