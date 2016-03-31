@@ -36,5 +36,5 @@ request
   .pipe(p)
   .pipe(unzip.Parse())
   .on('entry', function (entry) {
-    entry.pipe(fs.createWriteStream(path.join(__dirname, 'lib', entry.path), { mode: 0o755 }));
+    entry.pipe(fs.createWriteStream(path.join(__dirname, 'lib', entry.path), { mode: 0755 }));
   })
