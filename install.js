@@ -12,7 +12,7 @@ var os      = process.platform;
 var arch    = {
   x64:  'amd64',
   ia32: '386'
-}[process.arch];
+}[process.arch] || '386';
 
 var filename = 'exor_' + os + '_' + arch + '.zip';
 var url = 'https://github.com/motemen/exor/releases/download/' + version + '/' + filename;
@@ -27,6 +27,9 @@ mkdirp.sync(path.join(__dirname, 'lib'));
 request
   .get(url)
   .on('response', function (response) {
+    if (response.statusCode >= 400) {
+      throw 'GET ' + url + ' failed: ' + response.statusCode;
+    }
     p.setLength(Number(response.headers['content-length']));
   })
   .on('end', function () {
