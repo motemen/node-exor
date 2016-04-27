@@ -1,6 +1,6 @@
 {
   "name": "@motemen/exor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Execute a command and kill all its children together when it is to be killed",
   "scripts": {
     "postinstall": "node install.js"
